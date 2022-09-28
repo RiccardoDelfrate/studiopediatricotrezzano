@@ -26,9 +26,10 @@
     <link rel="stylesheet" href="assets/css/Profile-Card.css">
     <link rel="stylesheet" href="assets/css/Search-Input-responsive.css">
     <link rel="stylesheet" href="assets/css/untitled.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body onload="customAlert.alert('Per tutti i pazienti interessati contattare la signora Serena','Vaccinazione anti-influenzale')">
     <header class="text-center text-white masthead"
         style="background:url('assets/img/bg-masthead.jpg')no-repeat center center;background-size:cover;">
         <div class="overlay"></div>
@@ -52,12 +53,15 @@
                         </li>
                         <li class="nav-item"><a class="nav-link active" href="#studio">Studio</a></li>
                         <li class="nav-item"><a class="nav-link active" href="#numeri_utili">Numeri utili</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#cartadeiservizi">Orario/Carta dei serivizi</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#cartadeiservizi">Orario/Carta dei
+                                serivizi</a></li>
                         <li class="nav-item"><a class="nav-link active" href="contents/guidamedica.html">Guida
                                 medica</a></li>
                         <li class="nav-item"><a class="nav-link active" href="./contents/covid.html">Covid 19</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="./contents/vaccinazioni.html">Vaccinazioni</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="./contents/antiInf22-23.html">Campagna vaccinale anti influenza '22-'23</a></li>
+                        <li class="nav-item"><a class="nav-link active"
+                                href="./contents/vaccinazioni.html">Vaccinazioni</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="./contents/antiInf22-23.html">Campagna
+                                vaccinale anti influenza '22-'23</a></li>
 
                     </ul>
                 </div>
@@ -189,7 +193,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-11 mb-3" >
+                    <div class="col-xl-11 mb-3">
                         <div class="table-responsive table-bordered">
                             <table class="table table-bordered table2excel mb-3" style="text-align: center;">
                                 <thead>
@@ -239,7 +243,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
     </section>
@@ -271,8 +275,42 @@
         </div>
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Cookie-Banner.js"></script>
     <script src="assets/js/HTML-Table-to-Excel-V2.js"></script>
 </body>
+<script>
+    function CustomAlert() {
+        this.alert = function (message, title) {
+            document.body.innerHTML = document.body.innerHTML + '<div id="dialogoverlay"></div><div id="dialogbox" class="slit-in-vertical"><div><div id="dialogboxhead"></div><div id="dialogboxbody"></div><div id="dialogboxfoot"></div></div></div>';
+
+            let dialogoverlay = document.getElementById('dialogoverlay');
+            let dialogbox = document.getElementById('dialogbox');
+
+            let winH = window.innerHeight;
+            dialogoverlay.style.height = winH + "px";
+
+            dialogbox.style.top = "100px";
+
+            dialogoverlay.style.display = "block";
+            dialogbox.style.display = "block";
+
+            document.getElementById('dialogboxhead').style.display = 'block';
+
+            if (typeof title === 'undefined') {
+                document.getElementById('dialogboxhead').style.display = 'none';
+            } else {
+                document.getElementById('dialogboxhead').innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + title;
+            }
+            document.getElementById('dialogboxbody').innerHTML = message;
+            document.getElementById('dialogboxfoot').innerHTML = '<button class="pure-material-button-contained active" onclick="customAlert.ok()">OK</button>';
+        }
+
+        this.ok = function () {
+            document.getElementById('dialogbox').style.display = "none";
+            document.getElementById('dialogoverlay').style.display = "none";
+        }
+    }
+
+    let customAlert = new CustomAlert();
+</script>
 
 </html>
