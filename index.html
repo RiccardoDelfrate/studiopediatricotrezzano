@@ -57,6 +57,7 @@
                         <li class="nav-item"><a class="nav-link active" href="#cartadeiservizi">Orario/Carta dei serivizi</a></li>
                         <li class="nav-item"><a class="nav-link active" href="contents/guidamedica.html">Guida medica</a></li>
                         <li class="nav-item"><a class="nav-link active" href="./contents/vaccinazioni.html">Vaccinazioni</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="./contents/collaboratori.html">Collaboratori</a></li>
                     </ul>
                 </div>
             </div>
@@ -267,7 +268,7 @@
                     </ul>
                 </div>
                 <div class="col">
-                    <p class="text-center text-muted small mb-4 mb-lg-0">© Pediatria Trezzano 2021. All Rights Reserved,
+                    <p class="text-center text-muted small mb-4 mb-lg-0">© Pediatria Trezzano 2024. All Rights Reserved,
                         developed by Riccardo Delfrate.</p>
                 </div>
             </div>
@@ -276,40 +277,4 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/HTML-Table-to-Excel-V2.js"></script>
 </body>
-<script>
-    function CustomAlert() {
-        this.alert = function (message, title) {
-            document.body.innerHTML = document.body.innerHTML + '<div id="dialogoverlay"></div><div id="dialogbox" class="slit-in-vertical"><div><div id="dialogboxhead"></div><div id="dialogboxbody"></div><div id="dialogboxfoot"></div></div></div>';
-
-            let dialogoverlay = document.getElementById('dialogoverlay');
-            let dialogbox = document.getElementById('dialogbox');
-
-            let winH = window.innerHeight;
-            dialogoverlay.style.height = winH + "px";
-
-            dialogbox.style.top = "100px";
-
-            dialogoverlay.style.display = "block";
-            dialogbox.style.display = "block";
-
-            document.getElementById('dialogboxhead').style.display = 'block';
-
-            if (typeof title === 'undefined') {
-                document.getElementById('dialogboxhead').style.display = 'none';
-            } else {
-                document.getElementById('dialogboxhead').innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + title;
-            }
-            document.getElementById('dialogboxbody').innerHTML = message;
-            document.getElementById('dialogboxfoot').innerHTML = '<button class="pure-material-button-contained active" onclick="customAlert.ok()">OK</button>';
-        }
-
-        this.ok = function () {
-            document.getElementById('dialogbox').style.display = "none";
-            document.getElementById('dialogoverlay').style.display = "none";
-        }
-    }
-
-    let customAlert = new CustomAlert();
-</script>
-
 </html>
