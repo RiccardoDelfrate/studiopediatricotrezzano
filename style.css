@@ -7,6 +7,48 @@
     animation: slit-in-vertical 0.45s ease-out both;
 }
 
+
+.masthead {
+    background: url('assets/img/bg-masthead.jpg') no-repeat center center;
+    background-size: cover;
+}
+.banner-opaco {
+    position: absolute;
+    top: 100%; /* Posiziona il banner sotto il titolo */
+    left: 0;
+    right: 0;
+    height: 3.5em; /* Altezza del banner, puoi modificare secondo necessità */
+    background-color: rgba(101, 188, 251, 0.6); /* Colore nero opaco */
+    margin-top: -25px; /* Sposta il banner verso l'alto per sovrapporlo parzialmente al titolo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Colore del testo */
+    font-size: 20px; /* Dimensione del testo, puoi modificare secondo necessità */
+    padding: 10px; /* Padding per contenere il bottone */
+    box-sizing: border-box; /* Assicura che il padding non aumenti la dimensione del div */
+}
+.banner-opaco span {
+    flex: 1; /* Per assicurare che il testo occupi lo spazio disponibile */
+    text-align: center; /* Centra il testo orizzontalmente */
+}
+.banner-opaco button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.banner-opaco a {
+    color: #0000ff; /* Colore rosso per i link all'interno del banner */
+    text-decoration: none; /* Rimuove la sottolineatura dal link */
+}
+
+
 @-webkit-keyframes slit-in-vertical {
     0% {
         -webkit-transform: translateZ(-800px) rotateY(90deg);

@@ -31,17 +31,27 @@
 
 <body>
     <header class="text-center text-white masthead"
-        style="background:url('assets/img/bg-masthead.jpg')no-repeat center center;background-size:cover;">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-9 mx-auto position-relative">
-                    <h1 class="mb-5" style="color: #0000ff;font-size: 55px;">Studio Pediatrico Trezzano sul Naviglio
-                    </h1>
+    style="background:url('assets/img/bg-masthead.jpg')no-repeat center center;background-size:cover;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto position-relative">
+                <h1 class="mb-5" style="color: #0000ff;font-size: 55px;">Studio Pediatrico Trezzano sul Naviglio</h1>
+                <div class="banner-opaco" id="bannerOpaco">
+                    <span>Scarica l'app <i>MioPediatra</i> da <a href='https://play.google.com/store/apps/details?id=it.miopediatra&pcampaignid=web_share'>Google</a> o <a href='https://apps.apple.com/it/app/miopediatra/id1512934824'>Apple</a> store</span>
+                    <button onclick="closeBanner()">x</button>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+    <script>
+        function closeBanner() {
+            document.getElementById('bannerOpaco').style.display = 'none';
+        }
+    </script>
+</header>
+
+
     <section class="text-center bg-white testimonials" style="padding-top: 0px;">
         <nav class="navbar navbar-light navbar-expand-md" style="transform: perspective(0px);background: #65bcfb;">
             <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler"
