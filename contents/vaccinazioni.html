@@ -245,10 +245,36 @@
           </p>
         </div>
       </div>
-      <br>
-      <br>
-      <br>
-      <br>
+      <section class="article-list">
+            <div class="container">
+              <style>
+                .responsive-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 7em;
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    justify-content: center; /* opzionale: per centrare */
+                }
+
+                /* Responsive: riduci il gap su schermi piccoli */
+                @media (max-width: 600px) {
+                    .responsive-list {
+                    gap: 2em;
+                    justify-content: flex-start;
+                    }
+                }
+                </style>                
+
+                <div class="row articles">
+                    <div class="col-sm-6 col-md-4 item" style="height: 425px;"><a href="./pdf/vaccinazioni/Vaccinazione Papilloma Virus Umano.pdf" target="_blank"><img class="img-fluid" src="../assets/img/vaccini.png"></a>
+                        <h3 class="name">Vaccinazione Papilloma Virus Umano</h3><a class="action" href="./pdf/vaccinazioni/Vaccinazione Papilloma Virus Umano.pdf" target="_blank"><i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
     </div>
     <footer
       class="bg-light footer"
